@@ -20,5 +20,20 @@ int main() {
     for (int i = 0; i < len; i++) {
         cin >> arr[i];
     }
+
+    map<int, int> indices;
+    for (int i = 0; i < len; i++) {
+        indices[arr[i]] = i;
+    }
+
+    int count = 1;
+
+    for (int i = 1; i < len; i++) {
+        if (indices[i] > indices[i + 1]) {
+            count++;
+        }
+    }
+
+    cout << count << endl;
     return 0;
 }
